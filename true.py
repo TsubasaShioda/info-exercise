@@ -25,6 +25,10 @@ if __name__ == '__main__':
     print("ノイズを付与したサンプルデータ:")
     print(sample_df.head())
 
+    # DataFrameをTSVファイルに出力
+    output_filename = 'sample_data.tsv'
+    sample_df.to_csv(output_filename, sep='\t', index=False)
+    
     # 演習1.2のグラフを再現
     x_smooth = np.linspace(-1, 1, 100)
     y_smooth = true_function(x_smooth)
